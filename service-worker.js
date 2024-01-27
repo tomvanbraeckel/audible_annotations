@@ -1,15 +1,14 @@
 const cacheName = 'audible-annotations-cache-v1';
 const filesToCache = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/images/logo_192x192_black_on_white.png',
-  '/audio/annotating_positive.mp3',
-  '/audio/annotating_interesting.mp3',
-  '/audio/annotating_question.mp3',
-  '/audio/annotating_to_do.mp3',
-  '/audio/annotating_undone.mp3',
-  '/service-worker.js',
+  'index.html',
+  'manifest.json',
+  'images/logo_192x192_black_on_white.png',
+  'audio/annotating_positive.mp3',
+  'audio/annotating_interesting.mp3',
+  'audio/annotating_question.mp3',
+  'audio/annotating_to_do.mp3',
+  'audio/annotating_undone.mp3',
+  'service-worker.js',
 ];
 
 self.addEventListener('install', (event) => {

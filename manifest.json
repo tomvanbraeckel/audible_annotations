@@ -2,7 +2,7 @@
   "name": "Audible Annotations",
   "short_name": "Audible Annotations",
   "description": "Audible annotations for audio recordings, for visually impaired users and everyone who finds it useful.",
-  "start_url": "./",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
