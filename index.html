@@ -32,40 +32,48 @@
   </style>
 </head>
 <body>
-  <div class="quadrant" id="quadrant1" onclick="playAudio(1)">Positive</div>
-  <div class="quadrant" id="quadrant2" onclick="playAudio(2)">Interesting</div>
-  <div class="quadrant" id="quadrant3" onclick="playAudio(3)">Question</div>
-  <div class="quadrant" id="quadrant4" onclick="playAudio(4)">To Do</div>
+  <div class="quadrant" id="quadrant1" onclick="handleInput('q1')">Positive</div>
+  <div class="quadrant" id="quadrant2" onclick="handleInput('q2')">Interesting</div>
+  <div class="quadrant" id="quadrant3" onclick="handleInput('q3')">Question</div>
+  <div class="quadrant" id="quadrant4" onclick="handleInput('q4')">To Do</div>
 
   <script>
-    function playAudio(quadrant) {
+    function handleInput(command) {
       let filename = "";
-      if (quadrant == 1) {
-	      filename = "audio/annotating_positive.mp3";
-      } else if (quadrant == 2) {
-              filename = "audio/annotating_interesting.mp3";
-      } else if (quadrant == 3) {
-              filename = "audio/annotating_question.mp3";
-      } else if (quadrant == 4) {
-              filename = "audio/annotating_to_do.mp3";
+      if (command == "q1") {
+        filename = "audio/annotating_positive.mp3";
+      } else if (command == "q2") {
+        filename = "audio/annotating_interesting.mp3";
+      } else if (command == "q3") {
+        filename = "audio/annotating_question.mp3";
+      } else if (command == "q4") {
+        filename = "audio/annotating_to_do.mp3";
+      } else if (command == "undo") {
+        filename = "audio/annotating_undone.mp3";
       }
+      playAudio(filename);
+    }
+    function playAudio(filename) {
       var audio = new Audio(filename);
       audio.play();
     }
 
     function handleKeyPress(event) {
       switch (event.key) {
-        case '1':
-          playAudio(3);
-          break;
-        case '3':
-          playAudio(4);
-          break;
         case '7':
-          playAudio(1);
+          handleInput("q1");
           break;
         case '9':
-          playAudio(2);
+          handleInput("q2");
+          break;
+        case '1':
+          handleInput("q3");
+          break;
+        case '3':
+          handleInput("q4");
+          break;
+        case '0':
+          handleInput("undo");
           break;
       }
     }
