@@ -1,4 +1,4 @@
-const cacheName = 'audible-annotations-cache-v1';
+const cacheName = 'audible-annotations-cache-v2';
 const filesToCache = [
   'index.html',
   'manifest.json',
