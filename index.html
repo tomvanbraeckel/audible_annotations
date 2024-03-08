@@ -11,11 +11,9 @@
       overflow: hidden;
     }
 
-    .quadrant {
+    .audiobutton {
       text-align: center;
       text-transform: uppercase;
-      width: 50%;
-      height: 50vh;
       float: left;
       cursor: pointer;
       font-family: sans-serif;
@@ -26,17 +24,50 @@
       font-size: xx-large;
     }
 
-    #quadrant1 { background-color: #FF0000; }
-    #quadrant2 { background-color: #00FF00; }
+    .quadrant {
+      width: 50%;
+      height: 50vh;
+    }
+
+    .undo {
+      width: 20%;
+      height: 40vh;
+      position: absolute;
+      left: 40%; /* 100 (total) - 20 (width) = 80 / 2 */
+      top: 30%; /* 100 (total) - 40 (height) = 60 / 2 */
+      border-radius: 4em;
+    }
+
+    #quadrant1 { background-color: #00FF00; }
+    #quadrant2 { background-color: #FF0000; }
     #quadrant3 { background-color: #0000FF; }
     #quadrant4 { background-color: #FFFF00; }
+    #undo { background-color: #fff; }
+
+    a {
+      color: #000;
+      text-decoration: unset;
+    }
+
+    .quadrant a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .undo a:hover {
+      color: #c00000;
+      text-decoration: underline;
+    }
+
+
   </style>
 </head>
 <body>
-  <div class="quadrant" id="quadrant1" onclick="handleInput('q1')">Positive</div>
-  <div class="quadrant" id="quadrant2" onclick="handleInput('q2')">Interesting</div>
-  <div class="quadrant" id="quadrant3" onclick="handleInput('q3')">Question</div>
-  <div class="quadrant" id="quadrant4" onclick="handleInput('q4')">To Do</div>
+  <div class="audiobutton quadrant" id="quadrant1" onclick="handleInput('q1')"><h1><a href="#">Positive</a></h1></div>
+  <div class="audiobutton quadrant" id="quadrant2" onclick="handleInput('q2')"><h1><a href="#">Interesting</a></h1></div>
+  <div class="audiobutton quadrant" id="quadrant3" onclick="handleInput('q3')"><h1><a href="#">Question</a></h1></div>
+  <div class="audiobutton quadrant" id="quadrant4" onclick="handleInput('q4')"><h1><a href="#">To Do</a></h1></div>
+  <div class="audiobutton undo" id="undo" onclick="handleInput('undo')"><h2><a href="#">Undo</a></h2></div>
 
   <script>
     function handleInput(command) {
